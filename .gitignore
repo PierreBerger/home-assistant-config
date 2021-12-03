@@ -11,10 +11,11 @@ known_devices.yaml
 home-assistant_v2.db*
 home-assistant.log*
 
+homeassistant
+
 .vscode
 .DS_Store
 
-www/community
 *.pyc
 
 # Byte-compiled / optimized / DLL files
