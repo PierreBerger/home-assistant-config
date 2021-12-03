@@ -1,10 +1,4 @@
 background: var(--background-image)
-custom_header:
-  background: rgba(155, 155, 155, 0.25)
-  button_text:
-    options: '{{ hours24 }}:{{ minutesLZ }}'
-  compact_mode: true
-  voice_hide: true
 title: Appart
 views:
 - badges:
@@ -12,30 +6,22 @@ views:
   - entity: sun.sun
   cards:
   - entities:
-    - light.chambre
-    - light.entree
-    - light.salon
+    - entity: light.chambre
+    - entity: light.canape
+    - entity: light.fauteuil
     title: Lights
     type: entities
-  - entity: light.chambre
-    type: light
   - entity: weather.appart
     type: weather-forecast
+  - entity: light.chambre
+    type: light
   - entity: media_player.spotify_pierre_berger
     type: media-control
-  - entity: sensor.netatmo_statmet_exterieur_temperature
+  - entity: sensor.netatmo_statmet_interieur_exterieur_temperature
     graph: line
     hours_to_show: 24
     name: Saint Germain
     type: sensor
-  - entities:
-    - entity: sensor.netatmo_statmet_exterieur_max_temp
-    - entity: sensor.netatmo_statmet_exterieur_min_temp
-    - entity: sensor.netatmo_statmet_exterieur_temperature
-    show_icon: false
-    show_name: true
-    show_state: true
-    type: glance
   - entities:
     - entities:
       - input_select.theme
@@ -46,7 +32,7 @@ views:
     show_header_toggle: false
     type: entities
   icon: mdi:home
-  path: default_view
+  path: home
   title: Home
 - badges: []
   cards:
