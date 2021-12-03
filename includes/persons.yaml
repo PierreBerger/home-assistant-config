@@ -1,0 +1,6 @@
+- name: Pierre
+  id: pierre
+  user_id: 1c53afa8194c433fa7e7fd8f43503ef0
+  picture: "/local/pierre.png"
+  device_trackers:
+    - device_tracker.iphone_de_pierre # from iOS app
