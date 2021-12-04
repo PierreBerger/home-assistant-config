@@ -46,6 +46,23 @@ views:
       service: shell_command.convert_lovelace
     type: button
   icon: mdi:home-automation
+- badges: []
+  cards:
+  - entity: weather.appart
+    type: weather-forecast
+  - detail: 1
+    entity: sensor.netatmo_statmet_exterieur_temperature
+    graph: line
+    hours_to_show: 24
+    name: Netatmo extérieur
+    type: sensor
+  - entity: sensor.netatmo_statmet_interieur_temperature
+    graph: line
+    name: Netatmo intérieur
+    type: sensor
+  icon: mdi:weather-cloudy
+  path: weather
+  title: Weather
 - badges:
   - entity: person.pierre
   cards:
