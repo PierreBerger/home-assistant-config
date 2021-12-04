@@ -63,6 +63,20 @@ views:
   icon: mdi:weather-cloudy
   path: weather
   title: Weather
+- badges: []
+  cards:
+  - entities:
+    - entity: sensor.interrupteur_battery_level
+      name: Interrupteur
+    - entity: sensor.netatmo_statmet_exterieur_battery_percent
+      name: Netatmo extérieur
+    - entity: sensor.netatmo_statmet_exterieur_pluviometre_battery_percent
+      name: Neatmo Pluviometre
+    - entity: sensor.iphone_de_pierre_battery_level
+    type: entities
+  icon: mdi:battery-50
+  path: power
+  title: Power
 - badges:
   - entity: person.pierre
   cards:
