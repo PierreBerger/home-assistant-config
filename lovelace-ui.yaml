@@ -46,3 +46,13 @@ views:
       service: shell_command.convert_lovelace
     type: button
   icon: mdi:home-automation
+- badges:
+  - entity: person.pierre
+  cards:
+  - entities:
+    - entity: sensor.iphone_de_pierre_geocoded_location
+    type: map
+  - entities:
+    - sensor.iphone_de_pierre_geocoded_location
+    type: entities
+  icon: mdi:account
