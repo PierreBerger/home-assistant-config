@@ -17,7 +17,9 @@ views:
     type: light
   - entity: media_player.spotify_pierre_berger
     type: media-control
-  - entity: sensor.netatmo_statmet_interieur_exterieur_temperature
+  - entity: media_player.salon
+    type: media-control
+  - entity: sensor.netatmo_statmet_exterieur_temperature
     graph: line
     hours_to_show: 24
     name: Saint Germain
@@ -37,7 +39,7 @@ views:
 - badges: []
   cards:
   - icon: mdi:json
-    icon_height: 20px
+    icon_height: 0px
     name: Convert lovelace
     show_icon: true
     show_name: true
@@ -87,7 +89,7 @@ views:
   - entity: person.pierre
   cards:
   - entities:
-    - entity: sensor.iphone_de_pierre_geocoded_location
+    - entity: person.pierre
     type: map
   - entities:
     - sensor.iphone_de_pierre_geocoded_location
