@@ -45,6 +45,12 @@ views:
       action: call-service
       service: shell_command.convert_lovelace
     type: button
+  - entities:
+    - entity: sensor.speedtest_download
+    - entity: sensor.speedtest_upload
+    - entity: sensor.speedtest_ping
+    title: Network
+    type: entities
   icon: mdi:home-automation
 - badges: []
   cards:
