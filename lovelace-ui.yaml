@@ -33,6 +33,44 @@ views:
       type: custom:fold-entity-row
     show_header_toggle: false
     type: entities
+  - entities:
+    - entity: sensor.tram_a_la_poya
+      name: '{% set destination = state_attr(''sensor.tram_a_la_poya'', ''destination'')
+        %} {% if destination != None %} Tram A - {{ destination }} {% else %} {{ state_attr(''sensor.tram_a_la_poya'',
+        ''name'') }} {% endif %}'
+      state: "{{ states('sensor.tram_a_la_poya') }} {% set unit = state_attr('sensor.tram_a_la_poya',\
+        \ 'unit_of_measurement') %} {% if unit != None %} {{ unit }} {% endif %} \n"
+      type: custom:template-entity-row
+    - entity: sensor.tram_a_l_etoile
+      image: https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Paris_logo_tram_jms.svg/2048px-Paris_logo_tram_jms.svg.png
+      name: '{% set destination = state_attr(''sensor.tram_a_l_etoile'', ''destination'')
+        %} {% if destination != None %} Tram A - {{ destination }} {% else %} {{ state_attr(''sensor.tram_a_l_etoile'',
+        ''name'') }} {% endif %}'
+      state: "{{ states('sensor.tram_a_l_etoile') }}  {% set unit = state_attr('sensor.tram_a_l_etoile',\
+        \ 'unit_of_measurement') %} {% if unit != None %} {{ unit }} {% endif %} \n"
+      type: custom:template-entity-row
+    - entity: sensor.tram_b_oxford
+      name: '{% set destination = state_attr(''sensor.tram_b_oxford'', ''destination'')
+        %} {% if destination != None %} Tram B - {{ destination }} {% else %} {{ state_attr(''sensor.tram_b_oxford'',
+        ''name'') }} {% endif %}'
+      secondary: 'Next {{ state_attr(''sensor.tram_b_oxford'', ''next'') }} {% set
+        unit = state_attr(''sensor.tram_b_oxford'', ''unit_of_measurement'') %} {%
+        if unit != None %} {{ unit }} {% endif %} '
+      state: "{{ states('sensor.tram_b_oxford') }} {% set unit = state_attr('sensor.tram_b_oxford',\
+        \ 'unit_of_measurement') %} {% if unit != None %} {{ unit }} {% endif %} \n"
+      type: custom:template-entity-row
+    - entity: sensor.tram_b_plaine_des_sports
+      name: '{% set destination = state_attr(''sensor.tram_b_plaine_des_sports'',
+        ''destination'') %} {% if destination != None %} Tram B - {{ destination }}
+        {% else %} {{ state_attr(''sensor.tram_b_plaine_des_sports'', ''name'') }}
+        {% endif %}'
+      state: '{{ states(''sensor.tram_b_plaine_des_sports'') }} {% set unit = state_attr(''sensor.tram_b_plaine_des_sports'',
+        ''unit_of_measurement'') %} {% if unit != None %} {{ unit }} {% endif %}
+
+        '
+      type: custom:template-entity-row
+    - entity: sensor.c1_cite_jean_mace
+    type: entities
   icon: mdi:home
   path: home
   title: Home
