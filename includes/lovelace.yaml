@@ -1,0 +1,9 @@
+resources:
+  - url: /local/community/lovelace-template-entity-row/template-entity-row.js
+    type: module
+  - url: /local/community/lovelace-fold-entity-row/fold-entity-row.js
+    type: module
+  - url: /local/community/lovelace-card-tools/card-tools.js
+    type: module
+  - url: /local/community/secondaryinfo-entity-row/secondaryinfo-entity-row.js
+    type: module
