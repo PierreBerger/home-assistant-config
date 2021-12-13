@@ -8,7 +8,6 @@ import voluptuous as vol
 
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 from homeassistant.const import (
-    HTTP_OK,
     STATE_UNKNOWN,
     TIME_MINUTES,
     ATTR_ATTRIBUTION,
