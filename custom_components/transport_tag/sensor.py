@@ -31,9 +31,13 @@ CONF_STOP_ID = "stop_id"
 CONF_ROUTE = "route"
 CONF_ROUTES = "routes"
 CONF_MODE = "mode"
+CONF_ORIGIN = "origin"
+
 MODE_DELAY = "delay"
 MODE_HOUR = "hour"
+
 DEFAULT_MODE = MODE_DELAY
+DEFAULT_ORIGIN = "Home assistant integration"
 
 ATTRIBUTION = "Data provided by data.metromobilite.fr"
 
@@ -56,18 +60,15 @@ ROUTES_SCHEMA = vol.All(cv.ensure_list, [ROUTE_SCHEMA])
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
+        vol.Optional(CONF_ORIGIN, default=DEFAULT_ORIGIN): cv.string,
         vol.Optional(CONF_ROUTES): ROUTES_SCHEMA
     }
 )
 
 def setup_platform(hass, config, add_entities, discovery_info=None):
     """Set up the Transport TAG sensor."""
-    stop_id = config.get(CONF_STOP_ID)
-    route = config.get(CONF_ROUTE)
-    name = config.get(CONF_NAME)
-    mode = config.get(CONF_MODE)
-
-    client = Metromobilite()
+    
+    client = Metromobilite(origin=config.get(CONF_ORIGIN))
 
     if client is None:
          raise PlatformNotReady

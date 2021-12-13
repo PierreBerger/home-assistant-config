@@ -1,4 +1,5 @@
 - platform: transport_tag
+  origin: Pierre Berger Home Assistant
   routes:
   - name: Tram A - La Poya
     stop_id: !secret stop_id_1

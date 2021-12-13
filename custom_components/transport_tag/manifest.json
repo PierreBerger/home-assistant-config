@@ -4,7 +4,7 @@
     "documentation": "",
     "dependencies": [],
     "codeowners": ["@pierreberger"],
-    "requirements": ["metromobilite==0.1.0"],
+    "requirements": ["metromobilite==0.1.1"],
     "version": "1.0.0",
     "iot_class": "cloud_polling"
 }
