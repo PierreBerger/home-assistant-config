@@ -1,0 +1,9 @@
+- platform: group
+  name: Living room lights
+  entities:
+    - light.canape
+    - light.fauteuil
+- platform: group
+  name: Bedroom lights
+  entities:
+    - light.chambre

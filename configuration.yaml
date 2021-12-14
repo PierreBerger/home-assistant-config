@@ -17,4 +17,4 @@ shell_command: !include includes/shell_commands.yaml
 person: !include includes/persons.yaml
 zone: !include includes/zones.yaml
 sensor: !include includes/sensors.yaml
-lovelace: !include includes/lovelace.yaml
+light: !include includes/lights.yaml
