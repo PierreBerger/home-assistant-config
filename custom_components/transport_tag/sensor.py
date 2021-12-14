@@ -167,7 +167,7 @@ class MetromobiliteTransportSensor(Entity):
             pattern = trip["pattern"]
             times = trip["times"]
 
-            if self._route in pattern["id"] and len(times) > 1:
+            if self._route in pattern["id"] and len(times) >= 1:
                 timestamp = times[0]["scheduledArrival"] + times[0]["serviceDay"]
                 self._state = due_in_minutes(timestamp) if self._mode == "delay" else compute_hour(timestamp)
 
