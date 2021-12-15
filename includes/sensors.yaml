@@ -1,20 +1,21 @@
+---
 - platform: transport_tag
   origin: Pierre Berger Home Assistant
   routes:
-  - name: Tram A - La Poya
-    stop_id: !secret stop_id_1
-    route: SEM:A
-  - name: Tram A - L'étoile
-    stop_id: !secret stop_id_2
-    route: SEM:A
-  - name: Tram B - Plaine des Sports
-    stop_id: !secret stop_id_2
-    route: SEM:B
-  - name: Tram B - Oxford
-    stop_id: !secret stop_id_1
-    route: SEM:B
-    mode: hour
-  - name: C1 - Cite Jean Mace
-    stop_id: !secret stop_id_3
-    route: C1
-    mode: hour
+    - name: Tram A - La Poya
+      stop_id: !secret stop_id_1
+      route: SEM:A
+    - name: Tram A - L'étoile
+      stop_id: !secret stop_id_2
+      route: SEM:A
+    - name: Tram B - Plaine des Sports
+      stop_id: !secret stop_id_2
+      route: SEM:B
+    - name: Tram B - Oxford
+      stop_id: !secret stop_id_1
+      route: SEM:B
+      mode: hour
+    - name: C1 - Cite Jean Mace
+      stop_id: !secret stop_id_3
+      route: C1
+      mode: hour

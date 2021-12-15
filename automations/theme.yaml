@@ -1,3 +1,4 @@
+---
 - alias: "Frontend: turn on dark mode"
   trigger:
     platform: time

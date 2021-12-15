@@ -1,3 +1,4 @@
+---
 name: Appart
 latitude: !secret latitude
 longitude: !secret longitude
