@@ -1,4 +1,4 @@
-
+---
 homeassistant: !include includes/homeassistant.yaml
 default_config:
 frontend:
@@ -9,7 +9,7 @@ automation: !include_dir_merge_list automations/
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
-input_boolean: !include  includes/input_boolean.yaml
+input_boolean: !include includes/input_boolean.yaml
 input_select: !include includes/input_select.yaml
 spotify: !include includes/spotify.yaml
 shell_command: !include includes/shell_commands.yaml
