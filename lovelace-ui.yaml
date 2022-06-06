@@ -26,6 +26,9 @@ views:
       - entity: light.chambre
         secondary_info: '{{relative_time(states.light.chambre.last_changed)}} ago'
         type: custom:secondaryinfo-entity-row
+      - entity: light.bureau
+        secondary_info: '{{relative_time(states.light.bureau.last_changed)}} ago'
+        type: custom:secondaryinfo-entity-row
       head:
         color_picker: true
         entity: light.bedroom_lights
@@ -143,12 +146,8 @@ views:
 - badges: []
   cards:
   - entities:
-    - entity: sensor.interrupteur_battery_level
+    - entity: sensor.switch_power
       name: Interrupteur
-    - entity: sensor.netatmo_statmet_exterieur_battery_percent
-      name: Netatmo extérieur
-    - entity: sensor.netatmo_statmet_exterieur_pluviometre_battery_percent
-      name: Neatmo Pluviometre
     - entity: sensor.iphone_de_pierre_battery_level
     type: entities
   icon: mdi:battery-50
