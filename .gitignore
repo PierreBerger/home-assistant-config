@@ -154,3 +154,5 @@ notebooks/
 airsonos.xml
 themes/ios-*
 *.db
+*.db-shm
+*.db-wal
