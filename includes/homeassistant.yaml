@@ -5,3 +5,6 @@ longitude: !secret longitude
 elevation: !secret elevation
 unit_system: metric
 time_zone: Europe/Paris
+
+auth_mfa_modules:
+  - type: totp
