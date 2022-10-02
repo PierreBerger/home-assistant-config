@@ -49,11 +49,6 @@ views:
     type: media-control
   - entity: media_player.salon
     type: media-control
-  - entity: sensor.netatmo_statmet_exterieur_temperature
-    graph: line
-    hours_to_show: 24
-    name: Saint Germain
-    type: sensor
   - entities:
     - entities:
       - input_select.theme
@@ -63,48 +58,22 @@ views:
       type: custom:fold-entity-row
     show_header_toggle: false
     type: entities
-  - entities:
-    - entity: sensor.tram_a_la_poya
-      image: https://www.tag.fr/uploads/FichesHoraires/47/54_841_A_100px.png
-      name: '{% set destination = state_attr(''sensor.tram_a_la_poya'', ''destination'')
-        %} {% if destination != None %} Tram A - {{ destination }} {% else %} {{ state_attr(''sensor.tram_a_la_poya'',
-        ''name'') }} {% endif %}'
-      state: "{{ states('sensor.tram_a_la_poya') }} {% set unit = state_attr('sensor.tram_a_la_poya',\
-        \ 'unit_of_measurement') %} {% if unit != None %} {{ unit }} {% endif %} \n"
-      type: custom:template-entity-row
-    - entity: sensor.tram_a_l_etoile
-      image: https://www.tag.fr/uploads/FichesHoraires/47/54_841_A_100px.png
-      name: '{% set destination = state_attr(''sensor.tram_a_l_etoile'', ''destination'')
-        %} {% if destination != None %} Tram A - {{ destination }} {% else %} {{ state_attr(''sensor.tram_a_l_etoile'',
-        ''name'') }} {% endif %}'
-      state: "{{ states('sensor.tram_a_l_etoile') }}  {% set unit = state_attr('sensor.tram_a_l_etoile',\
-        \ 'unit_of_measurement') %} {% if unit != None %} {{ unit }} {% endif %} \n"
-      type: custom:template-entity-row
-    - entity: sensor.tram_b_oxford
-      image: https://www.tag.fr/uploads/FichesHoraires/cc/55_848_B-100px.png
-      name: '{% set destination = state_attr(''sensor.tram_b_oxford'', ''destination'')
-        %} {% if destination != None %} Tram B - {{ destination }} {% else %} {{ state_attr(''sensor.tram_b_oxford'',
-        ''name'') }} {% endif %}'
-      secondary: 'Next {{ state_attr(''sensor.tram_b_oxford'', ''next'') }} {% set
-        unit = state_attr(''sensor.tram_b_oxford'', ''unit_of_measurement'') %} {%
-        if unit != None %} {{ unit }} {% endif %} '
-      state: "{{ states('sensor.tram_b_oxford') }} {% set unit = state_attr('sensor.tram_b_oxford',\
-        \ 'unit_of_measurement') %} {% if unit != None %} {{ unit }} {% endif %} \n"
-      type: custom:template-entity-row
-    - entity: sensor.tram_b_plaine_des_sports
-      image: https://www.tag.fr/uploads/FichesHoraires/cc/55_848_B-100px.png
-      name: '{% set destination = state_attr(''sensor.tram_b_plaine_des_sports'',
-        ''destination'') %} {% if destination != None %} Tram B - {{ destination }}
-        {% else %} {{ state_attr(''sensor.tram_b_plaine_des_sports'', ''name'') }}
-        {% endif %}'
-      state: '{{ states(''sensor.tram_b_plaine_des_sports'') }} {% set unit = state_attr(''sensor.tram_b_plaine_des_sports'',
-        ''unit_of_measurement'') %} {% if unit != None %} {{ unit }} {% endif %}
-
-        '
-      type: custom:template-entity-row
-    - entity: sensor.c1_cite_jean_mace
-      image: https://www.tag.fr/uploads/FichesHoraires/11/60_867_C1-100px.png
-    type: entities
+  - cards:
+    - detail: 1
+      entity: sensor.lumi_lumi_weather_32f13908_temperature
+      graph: line
+      hours_to_show: 24
+      name: Living room
+      type: sensor
+    - detail: 1
+      entity: sensor.lumi_lumi_weather_temperature
+      graph: line
+      hours_to_show: 24
+      name: Outside
+      type: sensor
+    columns: 2
+    square: false
+    type: grid
   icon: mdi:home
   path: home
   title: Home
@@ -119,12 +88,6 @@ views:
       action: call-service
       service: shell_command.convert_lovelace
     type: button
-  - entities:
-    - entity: sensor.speedtest_download
-    - entity: sensor.speedtest_upload
-    - entity: sensor.speedtest_ping
-    title: Network
-    type: entities
   icon: mdi:home-automation
 - badges: []
   cards:
@@ -140,6 +103,17 @@ views:
     graph: line
     name: Netatmo intérieur
     type: sensor
+  - detail: 1
+    entity: sensor.lumi_lumi_weather_32f13908_temperature
+    graph: line
+    hours_to_show: 24
+    name: Température Salon
+    type: sensor
+  - detail: 2
+    entity: sensor.lumi_lumi_weather_temperature
+    graph: line
+    hours_to_show: 24
+    type: sensor
   icon: mdi:weather-cloudy
   path: weather
   title: Weather
@@ -149,6 +123,8 @@ views:
     - entity: sensor.switch_power
       name: Interrupteur
     - entity: sensor.iphone_de_pierre_battery_level
+    - entity: sensor.lumi_lumi_weather_32f13908_power
+    - entity: sensor.lumi_lumi_weather_power
     type: entities
   icon: mdi:battery-50
   path: power
