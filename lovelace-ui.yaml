@@ -117,25 +117,23 @@ views:
   icon: mdi:weather-cloudy
   path: weather
   title: Weather
-- badges: []
-  cards:
-  - entities:
-    - entity: sensor.switch_power
-      name: Interrupteur
-    - entity: sensor.iphone_de_pierre_battery_level
-    - entity: sensor.lumi_lumi_weather_32f13908_power
-    - entity: sensor.lumi_lumi_weather_power
-    type: entities
-  icon: mdi:battery-50
-  path: power
-  title: Power
 - badges:
   - entity: person.pierre
   cards:
   - entities:
     - entity: person.pierre
     type: map
-  - entities:
-    - sensor.iphone_de_pierre_geocoded_location
-    type: entities
   icon: mdi:account
+- badges: []
+  cards:
+  - entities:
+    - entity: sensor.switch_power
+      name: Interrupteur
+    - entity: sensor.lumi_lumi_weather_32f13908_power
+    - entity: sensor.lumi_lumi_weather_power
+    - entity: sensor.lumi_lumi_sensor_magnet_aq2_battery
+      name: Gas Meter
+    type: entities
+  icon: mdi:battery-50
+  path: power
+  title: Power

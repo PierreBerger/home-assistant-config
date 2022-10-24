@@ -5,4 +5,4 @@
   picture: "/local/pierre.png"
   device_trackers:
     # from iOS app
-    - device_tracker.iphone_de_pierre
+    - device_tracker.iphone
