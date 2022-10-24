@@ -1,0 +1,14 @@
+---
+- alias: Gas counting
+  initial_state: true
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.lumi_lumi_sensor_magnet_aq2_opening
+      from: "off"
+      to: "on"
+  action:
+    - service: counter.increment
+      target:
+        entity_id: counter.gas_counter
+  mode: single

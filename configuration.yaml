@@ -18,3 +18,7 @@ person: !include includes/persons.yaml
 zone: !include includes/zones.yaml
 sensor: !include includes/sensors.yaml
 light: !include includes/lights.yaml
+
+counter:
+  gas_counter:
+    name: Gas Counter
