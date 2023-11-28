@@ -11,3 +11,4 @@ ignore: |
   themes/
   custom_components/
   lovelace-ui.yaml
+  ui_lovelace_minimalist/
