@@ -9,4 +9,5 @@ rules:
 ignore: |
   lib/
   themes/
+  custom_components/
   lovelace-ui.yaml
