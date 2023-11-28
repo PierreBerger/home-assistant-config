@@ -1,0 +1,48 @@
+esphome:
+  name: water-meter
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "kF8WitDlShzWJkXj6OJh8ufEH3xba8heDZVky0a7YLA="
+
+ota:
+  password: "edc945e1b0ffa8286c3b376a7b1875cb"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Water-Meter Fallback Hotspot"
+    password: "KGcHfLSRbDRG"
+
+captive_portal:
+
+web_server:
+  port: 80
+
+sensor: 
+  - platform: pulse_meter
+    pin: GPIO13
+    name: "Water Pulse Meter"
+    unit_of_measurement: "liter/min"
+    icon: "mdi:water"
+    total:
+      name: "Water Meter Total"
+      unit_of_measurement: "m³"
+      id: water_meter_total
+      accuracy_decimals: 3
+      device_class: water
+      state_class: total_increasing
+      filters:
+        - multiply: 0.001

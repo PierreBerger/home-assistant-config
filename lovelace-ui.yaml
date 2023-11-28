@@ -49,15 +49,6 @@ views:
     type: media-control
   - entity: media_player.salon
     type: media-control
-  - entities:
-    - entities:
-      - input_select.theme
-      head:
-        entity: input_boolean.dark_mode
-        name: Dark Mode
-      type: custom:fold-entity-row
-    show_header_toggle: false
-    type: entities
   - cards:
     - detail: 1
       entity: sensor.lumi_lumi_weather_32f13908_temperature
@@ -70,6 +61,12 @@ views:
       graph: line
       hours_to_show: 24
       name: Outside
+      type: sensor
+    - detail: 1
+      entity: sensor.lumi_lumi_weather_temperature_2
+      graph: line
+      hours_to_show: 24
+      name: Bedroom
       type: sensor
     columns: 2
     square: false
@@ -133,6 +130,7 @@ views:
     - entity: sensor.lumi_lumi_weather_power
     - entity: sensor.lumi_lumi_sensor_magnet_aq2_battery
       name: Gas Meter
+    - entity: sensor.lumi_lumi_weather_battery
     type: entities
   icon: mdi:battery-50
   path: power

@@ -1,0 +1,77 @@
+title: "Home"
+path: "home"
+cards:
+  - type: "custom:button-card"
+    template: "card_esh_welcome"
+    triggers_update: "input_boolean.minimalist_dropdown"
+    variables:
+      ulm_card_esh_welcome_collapse: input_boolean.minimalist_dropdown
+      ulm_weather: "weather.appart"
+      entity_1:
+        nav: "house"
+        icon: "mdi:home"
+        name: "House"
+        color: "blue"
+      entity_2:
+        nav: "lights"
+        icon: "mdi:lightbulb"
+        name: "Lights"
+        color: "yellow"
+      entity_3:
+        nav: "security"
+        icon: "mdi:shield"
+        name: Secure
+        color: "green"
+      entity_4:
+        nav: "weather"
+        icon: "mdi:weather-sunny"
+        name: Weather
+        color: "purple"
+      entity_5:
+        nav: "network"
+        icon: "mdi:flask"
+        name: Lab
+        color: "red"
+  - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        template: card_person
+        entity: person.username
+        variables:
+          ulm_card_person_entity: person.pierre
+          ulm_card_person_use_entity_picture: true
+          ulm_card_person_icon: mdi:face-man
+          ulm_card_person_battery: sensor.iphone_de_pierre_battery_level
+          ulm_address: sensor.iphone_de_pierre_geocoded_location
+  - type: "custom:button-card"
+    template: card_title
+    name: Rooms
+
+  - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        template:
+          - card_esh_room
+          - yellow_on
+        name: Living Room
+        entity: light.living_room_lights
+        icon: mdi:sofa
+        tap_action:
+          action: navigate
+          navigation_path: "living-room"
+        variables:
+          ulm_custom_card_esh_room_light_entity: light.living_room_lights
+        label: '[[[ return states["sensor.lumi_lumi_weather_32f13908_temperature"].state + "°C " + states["sensor.lumi_lumi_weather_32f13908_humidity"].state + " %" ]]]'
+      - type: "custom:button-card"
+        template:
+          - card_esh_room
+          - blue_on
+        name: Bedroom
+        entity: light.bedroom_lights
+        icon: mdi:bed
+        tap_action:
+          action: navigate
+          navigation_path: "bedroom"
+        variables:
+          ulm_custom_card_esh_room_light_entity: light.bedroom_lights
+        label: '[[[ return states["sensor.lumi_lumi_weather_temperature_2"].state + "°C " + states["sensor.lumi_lumi_weather_humidity_2"].state + " %" ]]]'

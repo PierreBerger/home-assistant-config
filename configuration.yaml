@@ -22,3 +22,13 @@ light: !include includes/lights.yaml
 counter:
   gas_counter:
     name: Gas Counter
+
+lovelace:
+  # Add yaml dashboards
+  dashboards:
+    lovelace-yaml:
+      mode: yaml
+      title: Dashboard
+      icon: mdi:cellphone
+      show_in_sidebar: true
+      filename: ui_lovelace_minimalist/dashboard/minimalist/ui.yaml

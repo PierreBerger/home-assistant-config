@@ -1,0 +1,85 @@
+title: "Weather"
+path: "weather"
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        template: chip_back
+        variables:
+          ulm_chip_back_path: home
+
+      - type: "custom:button-card"
+        template: card_title
+        name: Weather
+      - type: "custom:button-card"
+        template: chip_temperature
+        variables:
+          ulm_chip_temperature_livingroom: sensor.lumi_lumi_weather_32f13908_temperature
+          ulm_chip_temperature_outside: sensor.lumi_lumi_weather_temperature
+          ulm_chip_temperature_weather: weather.appart
+  - type: "custom:button-card"
+    template: card_weather
+    entity: weather.appart
+    variables:
+      ulm_card_weather_name: " "
+      ulm_card_weather_primary_info:
+        - wind_speed
+        - precipitation_probability
+      ulm_card_weather_backdrop: false
+  - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        template: card_graph
+        entity: sensor.lumi_lumi_weather_32f13908_temperature
+        variables:
+          ulm_card_graph_color: "var(--google-blue)"
+          ulm_card_graph_name: Livingroom
+          ulm_card_graph_entity: sensor.lumi_lumi_weather_32f13908_temperature
+          ulm_card_graph_type: fill
+          ulm_card_graph_hours: 24
+          ulm_card_graph_group_by: interval
+      - type: "custom:button-card"
+        template: card_graph
+        entity: sensor.lumi_lumi_weather_temperature_2
+        variables:
+          ulm_card_graph_color: "var(--google-blue)"
+          ulm_card_graph_name: Bedroom
+          ulm_card_graph_entity: sensor.lumi_lumi_weather_temperature_2
+          ulm_card_graph_type: fill
+          ulm_card_graph_hours: 24
+          ulm_card_graph_group_by: interval
+  - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        template: card_graph
+        entity: sensor.lumi_lumi_weather_temperature
+        variables:
+          ulm_card_graph_color: "var(--google-blue)"
+          ulm_card_graph_name: Outside
+          ulm_card_graph_entity: sensor.lumi_lumi_weather_temperature
+          ulm_card_graph_type: fill
+          ulm_card_graph_hours: 24
+          ulm_card_graph_group_by: interval
+      - type: "custom:button-card"
+        color_type: blank-card
+  - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        template: card_generic
+        entity: sensor.lumi_lumi_weather_32f13908_humidity
+        variables:
+          ulm_card_generic_name: Livingroom
+      - type: "custom:button-card"
+        template: card_generic
+        entity: sensor.lumi_lumi_weather_humidity_2
+        variables:
+          ulm_card_generic_name: Bedroom
+  - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        template: card_generic
+        entity: sensor.lumi_lumi_weather_humidity
+        variables:
+          ulm_card_generic_name: Outside
+      - type: "custom:button-card"
+        color_type: blank-card

@@ -6,6 +6,7 @@ elevation: !secret elevation
 unit_system: metric
 time_zone: Europe/Paris
 customize: !include customize.yaml
+country: FR
 
 auth_mfa_modules:
   - type: totp
